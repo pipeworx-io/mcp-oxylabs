@@ -1,20 +1,32 @@
 {
   "name": "@pipeworx/mcp-oxylabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Oxylabs MCP — Oxylabs Web Scraper API (oxylabs.io)",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "bin": {
+    "mcp-oxylabs": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "oxylabs"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-oxylabs"
+    "url": "git+https://github.com/pipeworx-io/mcp-oxylabs.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-9c198f443e81e4da0883bcd8af290b186532c131522e7bab5e17e5b0668668ec",
+    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
   }
 }
