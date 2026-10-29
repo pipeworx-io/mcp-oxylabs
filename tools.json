@@ -1,0 +1,85 @@
+[
+  {
+    "name": "oxylabs_scrape",
+    "description": "Scrape any URL via the Oxylabs Web Scraper API (rotating proxies, anti-bot handling) and return the page HTML with its upstream status code. Set render_js:true to load the page in a headless browser first — use for JS-heavy sites. Calls are synchronous proxying and can take 10-30 seconds. BYOK: _apiKey is \"username:password\" from the Oxylabs dashboard. Example: oxylabs_scrape({ url: \"https://example.com\", _apiKey: \"myuser:mypass\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The absolute URL to scrape, e.g. \"https://example.com/products\""
+        },
+        "render_js": {
+          "type": "boolean",
+          "description": "When true, render the page in a headless browser (executes JavaScript) before returning HTML. Use for JS-heavy sites. Default false (faster raw fetch)."
+        },
+        "geo_location": {
+          "type": "string",
+          "description": "Geo location to proxy the request from, e.g. \"United States\" or \"Germany\". Optional."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Oxylabs API credentials as \"username:password\" from the Oxylabs dashboard (https://dashboard.oxylabs.io). Free trial includes up to 2K results."
+        }
+      },
+      "required": [
+        "url",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "oxylabs_google_search",
+    "description": "Run a Google search through the Oxylabs Web Scraper API and return structured organic results (position, title, url, description) — Google structured scraping with geo-targeting. Calls are synchronous proxying and can take 10-30 seconds. BYOK: _apiKey is \"username:password\" from the Oxylabs dashboard. Example: oxylabs_google_search({ query: \"best espresso machine\", geo_location: \"United States\", _apiKey: \"myuser:mypass\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The Google search query, e.g. \"best espresso machine 2026\""
+        },
+        "geo_location": {
+          "type": "string",
+          "description": "Geo location for localized results, e.g. \"United States\", \"London,England,United Kingdom\". Optional."
+        },
+        "pages": {
+          "type": "number",
+          "description": "Number of result pages to fetch. Default 1."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Oxylabs API credentials as \"username:password\" from the Oxylabs dashboard (https://dashboard.oxylabs.io). Free trial includes up to 2K results."
+        }
+      },
+      "required": [
+        "query",
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "oxylabs_amazon_product",
+    "description": "Fetch structured Amazon product data by ASIN via the Oxylabs Web Scraper API — Amazon structured scraping: title, price, currency, rating, reviews count, stock/availability. Calls are synchronous proxying and can take 10-30 seconds. BYOK: _apiKey is \"username:password\" from the Oxylabs dashboard. Example: oxylabs_amazon_product({ asin: \"B08N5WRWNW\", domain: \"com\", _apiKey: \"myuser:mypass\" })",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "asin": {
+          "type": "string",
+          "description": "The Amazon product ASIN (10-character ID), e.g. \"B08N5WRWNW\""
+        },
+        "domain": {
+          "type": "string",
+          "description": "Amazon marketplace domain suffix: \"com\" (default), \"co.uk\", \"de\", \"co.jp\", etc."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Oxylabs API credentials as \"username:password\" from the Oxylabs dashboard (https://dashboard.oxylabs.io). Free trial includes up to 2K results."
+        }
+      },
+      "required": [
+        "asin",
+        "_apiKey"
+      ]
+    }
+  }
+]
