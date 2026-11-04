@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-oxylabs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Oxylabs MCP — Oxylabs Web Scraper API (oxylabs.io)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "oxylabs",
     "gatewaySlug": "oxylabs",
-    "sourceHash": "v1-c88863a3abf1de64cc74c96799b23b6795fd637f5c031bed768c95b024455bc3",
-    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
+    "sourceHash": "v1-329e4d41c5cf16abf31db4aab795f05f00057c04fd1098f95aa1353ae8a1f924",
+    "sourceCommit": "243a06a6ca2d3b6075325f3b66a1468d0a2eb603"
   }
 }
